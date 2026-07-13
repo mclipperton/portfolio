@@ -66,22 +66,15 @@ export default function Home() {
 
           <div className="home-hero-copy">
             <span className="hero-kicker">Hi I&apos;m Mark!</span>
-            <h1>Senior Product Designer at iamproperty.</h1>
+            <h1>Product Designer at iamproperty.</h1>
           </div>
         </div>
 
         <p className="home-hero-lede">
-          A Product Designer based in the North East of England. For over 6
+          Product Designer based in the North East of England. For over 6
           years I&apos;ve designed digital products that help businesses grow
           and make a meaningful impact.
         </p>
-
-        <div className="home-hero-meta" aria-label="Profile highlights">
-          <span>Senior level</span>
-          <span>iamproperty</span>
-          <span>Property tech</span>
-          <span>Product systems</span>
-        </div>
       </section>
 
       <section className="featured-section" id="featured-work">
@@ -91,7 +84,7 @@ export default function Home() {
           <p>
             My work at iamproperty sits in the middle of product thinking,
             operational complexity, and visual clarity. The goal is always the
-            same: make the product easier to use, easier to trust, and easier
+            same:make the product easier to use, easier to trust, and easier
             to evolve.
           </p>
         </div>
