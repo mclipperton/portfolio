@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-
-const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/work", label: "Work" },
-  { href: "/approach", label: "Approach" },
-  { href: "mailto:mark.clipperton@outlook.com", label: "Contact" },
-];
+import { SiteHeader } from "../../components/site-header";
 
 const projects = [
   {
@@ -61,64 +54,43 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <main className="portfolio-shell">
-      <header className="topbar">
-        <Link className="brand-mark" href="/">
-          Mark Clipperton
-        </Link>
+      <SiteHeader activePath="/work" />
+      <div className="page-content">
+        <section className="page-hero">
+          <span className="eyebrow">Work</span>
+          <h1 style={{ maxWidth: "11ch" }}>A wider look at the work behind the role.</h1>
+          <p className="lede">
+            This page gives a fuller view of how I work at senior level: spotting
+            complexity early, bringing clarity to the system, and making sure the
+            final product feels dependable for the people using it every day.
+          </p>
+        </section>
 
-        <nav className="topnav" aria-label="Primary">
-          {navItems.map((item) =>
-            item.href.startsWith("mailto:") ? (
-              <a key={item.label} href={item.href}>
-                {item.label}
-              </a>
-            ) : (
-              <Link
-                key={item.label}
-                aria-current={item.href === "/work" ? "page" : undefined}
-                href={item.href}
-              >
-                {item.label}
-              </Link>
-            ),
-          )}
-        </nav>
-      </header>
+        <section className="work-section">
+          <div className="work-grid">
+            {projects.map((project) => (
+              <article className="work-card" key={project.label}>
+                <div className="work-card-header">
+                  <span>{project.label}</span>
+                  <span>{project.impact}</span>
+                </div>
+                <h3>{project.title}</h3>
+                <p>{project.summary}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <section className="page-hero">
-        <span className="eyebrow">Work</span>
-        <h1 style={{ maxWidth: "11ch" }}>A wider look at the work behind the role.</h1>
-        <p className="lede">
-          This page gives a fuller view of how I work at senior level: spotting
-          complexity early, bringing clarity to the system, and making sure the
-          final product feels dependable for the people using it every day.
-        </p>
-      </section>
-
-      <section className="work-section">
-        <div className="work-grid">
-          {projects.map((project) => (
-            <article className="work-card" key={project.label}>
-              <div className="work-card-header">
-                <span>{project.label}</span>
-                <span>{project.impact}</span>
-              </div>
-              <h3>{project.title}</h3>
-              <p>{project.summary}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="page-note">
-        <strong>How I like to work</strong>
-        <p className="lede">
-          I usually start with the parts that create the most confusion, then
-          move toward the system and polish. At senior level, that means helping
-          teams make sharper trade-offs, keeping momentum high, and leaving the
-          product in a stronger place than where it started.
-        </p>
-      </section>
+        <section className="page-note">
+          <strong>How I like to work</strong>
+          <p className="lede">
+            I usually start with the parts that create the most confusion, then
+            move toward the system and polish. At senior level, that means helping
+            teams make sharper trade-offs, keeping momentum high, and leaving the
+            product in a stronger place than where it started.
+          </p>
+        </section>
+      </div>
     </main>
   );
 }

@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-
-const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/work", label: "Work" },
-  { href: "/approach", label: "Approach" },
-  { href: "mailto:mark.clipperton@outlook.com", label: "Contact" },
-];
+import { SiteHeader } from "../../components/site-header";
 
 const principles = [
   {
@@ -53,71 +46,50 @@ export const metadata: Metadata = {
 export default function ApproachPage() {
   return (
     <main className="portfolio-shell">
-      <header className="topbar">
-        <Link className="brand-mark" href="/">
-          Mark Clipperton
-        </Link>
+      <SiteHeader activePath="/approach" />
+      <div className="page-content">
+        <section className="page-hero">
+          <span className="eyebrow">Approach</span>
+          <h1 style={{ maxWidth: "12ch" }}>A calm process for complex work.</h1>
+          <p className="lede">
+            My approach is simple: understand the problem clearly, design the
+            system carefully, and refine the final experience until it feels easy
+            to use and easy to trust. At iamproperty, that means balancing user
+            needs, commercial goals, and operational realities without losing the
+            human side of the product.
+          </p>
+        </section>
 
-        <nav className="topnav" aria-label="Primary">
-          {navItems.map((item) =>
-            item.href.startsWith("mailto:") ? (
-              <a key={item.label} href={item.href}>
-                {item.label}
-              </a>
-            ) : (
-              <Link
-                key={item.label}
-                aria-current={item.href === "/approach" ? "page" : undefined}
-                href={item.href}
-              >
-                {item.label}
-              </Link>
-            ),
-          )}
-        </nav>
-      </header>
-
-      <section className="page-hero">
-        <span className="eyebrow">Approach</span>
-        <h1 style={{ maxWidth: "12ch" }}>A calm process for complex work.</h1>
-        <p className="lede">
-          My approach is simple: understand the problem clearly, design the
-          system carefully, and refine the final experience until it feels easy
-          to use and easy to trust. At iamproperty, that means balancing user
-          needs, commercial goals, and operational realities without losing the
-          human side of the product.
-        </p>
-      </section>
-
-      <section className="detail-grid" aria-label="Working principles">
-        {principles.map((principle) => (
-          <article className="detail-card" key={principle.title}>
-            <h3>{principle.title}</h3>
-            <p>{principle.copy}</p>
-          </article>
-        ))}
-      </section>
-
-      <section className="section">
-        <span className="eyebrow">Process</span>
-        <div className="detail-grid" style={{ marginTop: "22px" }}>
-          {process.map((step) => (
-            <article className="detail-card" key={step.title}>
-              <h3>{step.title}</h3>
-              <p>{step.copy}</p>
+        <section className="detail-grid" aria-label="Working principles">
+          {principles.map((principle) => (
+            <article className="detail-card" key={principle.title}>
+              <h3>{principle.title}</h3>
+              <p>{principle.copy}</p>
             </article>
           ))}
-        </div>
-      </section>
+        </section>
 
-      <section className="page-note">
-        <strong>What senior level looks like to me</strong>
-        <p className="lede">
-          It is not just about better screens. It is about clearer direction,
-          better collaboration, and a product culture where design helps the
-          whole team move with confidence.
-        </p>
-      </section>
+        <section className="section">
+          <span className="eyebrow">Process</span>
+          <div className="detail-grid" style={{ marginTop: "22px" }}>
+            {process.map((step) => (
+              <article className="detail-card" key={step.title}>
+                <h3>{step.title}</h3>
+                <p>{step.copy}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="page-note">
+          <strong>What senior level looks like to me</strong>
+          <p className="lede">
+            It is not just about better screens. It is about clearer direction,
+            better collaboration, and a product culture where design helps the
+            whole team move with confidence.
+          </p>
+        </section>
+      </div>
     </main>
   );
 }
