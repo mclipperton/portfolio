@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -5,7 +6,9 @@
   --foreground: #0f172a;
   --muted: #5f6b85;
   --font-sans-fallback:
-    "Inter", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    "Poppins", "Inter", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display-fallback:
+    "Kaisei Opti", Georgia, "Times New Roman", serif;
   --font-mono-fallback:
     "SFMono-Regular", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
   --card: rgba(255, 255, 255, 0.82);
@@ -23,6 +26,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans-fallback);
+  --font-display: var(--font-display-fallback);
   --font-mono: var(--font-mono-fallback);
 }
 
@@ -43,6 +47,7 @@ body {
     radial-gradient(circle at 88% 10%, rgba(37, 99, 235, 0.08), transparent 18%),
     linear-gradient(180deg, #ffffff 0%, #f7f8fc 100%);
   font-family: var(--font-sans-fallback);
+  letter-spacing: -0.01em;
 }
 
 a {
@@ -119,6 +124,7 @@ a {
   color: var(--muted);
   font-size: 0.94rem;
   font-weight: 600;
+  letter-spacing: -0.01em;
   transition: color 160ms ease;
 }
 
@@ -162,8 +168,8 @@ a {
   gap: 10px;
   width: fit-content;
   color: var(--accent-strong);
-  font-size: 0.76rem;
-  font-weight: 700;
+  font-size: 0.78rem;
+  font-weight: 600;
   letter-spacing: 0.16em;
   line-height: 1;
   text-transform: uppercase;
@@ -182,15 +188,16 @@ a {
 .contact-section h2 {
   margin: 0;
   color: #0f172a;
-  font-weight: 700;
-  letter-spacing: -0.06em;
-  line-height: 0.96;
+  font-family: var(--font-display-fallback);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.94;
 }
 
 .hero h1 {
   max-width: 12ch;
   margin-top: 18px;
-  font-size: clamp(3.1rem, 7vw, 6.6rem);
+  font-size: clamp(3.4rem, 7.6vw, 6.9rem);
 }
 
 .lede,
@@ -514,10 +521,11 @@ a {
 .page-hero h1 {
   margin: 0;
   color: #0f172a;
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  font-weight: 700;
-  letter-spacing: -0.06em;
-  line-height: 1;
+  font-family: var(--font-display-fallback);
+  font-size: clamp(3rem, 5.2vw, 5rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.94;
 }
 
 .page-hero p {
