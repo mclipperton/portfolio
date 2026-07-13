@@ -14,16 +14,17 @@ const iconUrl = toAbsoluteUrl(assetPath("/favicon.svg"));
 
 export const metadata: Metadata = {
   metadataBase: new URL(normalizedSiteUrl),
-  title: "Mark Clipperton | Product Designer",
+  title: "Mark Clipperton | Senior Product Designer at iamproperty",
   description:
-    "A portfolio website for product designer Mark Clipperton, featuring selected work, design principles, and contact details.",
+    "A portfolio website for senior product designer Mark Clipperton, featuring iamproperty experience, selected work, and design principles.",
   icons: {
     icon: iconUrl,
     shortcut: iconUrl,
   },
   openGraph: {
-    title: "Mark Clipperton | Product Designer",
-    description: "Selected product design work, process notes, and contact details.",
+    title: "Mark Clipperton | Senior Product Designer at iamproperty",
+    description:
+      "Selected product design work, process notes, and contact details.",
     url: normalizedSiteUrl,
     siteName: "Mark Clipperton",
     images: [
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mark Clipperton | Product Designer",
+    title: "Mark Clipperton | Senior Product Designer at iamproperty",
     description: "Selected product design work, process notes, and contact details.",
     images: [ogImageUrl],
   },

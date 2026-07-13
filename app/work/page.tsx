@@ -3,46 +3,46 @@ import Link from "next/link";
 
 const projects = [
   {
-    label: "FinTech onboarding",
-    title: "Turned a long account setup into a clear, reassuring flow.",
+    label: "iamproperty platform",
+    title: "Simplified complex agent workflows across a high-volume product.",
     summary:
-      "Reduced friction with progressive disclosure, sharper copy, and tighter guidance through the final verification step.",
-    impact: "22% lift in completion",
+      "Focused on the points where people lost time or confidence, then reshaped the journey so it felt clearer for everyday use and easier to scale.",
+    impact: "Senior impact",
   },
   {
-    label: "AI workspace",
-    title: "Shaped a dashboard that helps teams spot signal fast.",
+    label: "Product leadership",
+    title: "Aligned product, engineering, and stakeholders around a shared outcome.",
     summary:
-      "Reworked the hierarchy, simplified navigation, and introduced a calmer canvas for high-density product work.",
-    impact: "31% faster discovery",
+      "Used discovery, conversation, and strong design rationale to move teams from broad ideas to confident decisions with less rework.",
+    impact: "Cross-functional",
   },
   {
-    label: "Health app",
-    title: "Made a clinically dense journey feel calm and predictable.",
+    label: "Design system",
+    title: "Built reusable patterns that improved consistency across features.",
     summary:
-      "Balanced motion, progress cues, and accessible UI patterns so people always know what happens next.",
-    impact: "4.8/5 usability score",
+      "Defined components, content patterns, and states that helped the product stay coherent as new functionality was added.",
+    impact: "System thinking",
   },
   {
-    label: "Operations platform",
-    title: "Converted a busy admin tool into a more legible system.",
+    label: "Operational tooling",
+    title: "Made a dense internal interface easier to scan and act on.",
     summary:
-      "Simplified table density, reworked filters, and created a reusable pattern library for recurring actions.",
-    impact: "Fewer support tickets",
+      "Reduced friction in routine workflows by improving hierarchy, patterns, and the feedback users get while moving through tasks.",
+    impact: "Efficiency",
   },
   {
-    label: "Consumer app refresh",
-    title: "Gave a mature product a clearer visual hierarchy.",
+    label: "Discovery and research",
+    title: "Used evidence to keep design decisions grounded in real needs.",
     summary:
-      "Aligned the UI system, tightened spacing, and improved the product story through the homepage and settings flow.",
-    impact: "Higher feature adoption",
+      "Paired product thinking with user insight so the output balanced business goals, operational needs, and user confidence.",
+    impact: "Evidence-led",
   },
   {
-    label: "Internal design system",
-    title: "Built a shared language for teams shipping quickly.",
+    label: "Senior craft",
+    title: "Raised the bar on detail, accessibility, and final execution.",
     summary:
-      "Defined the base components, content patterns, and state logic so future work felt consistent from day one.",
-    impact: "Faster delivery",
+      "Used the final layer of polish to make products feel stable, intentional, and worthy of the team behind them.",
+    impact: "High craft",
   },
 ];
 
@@ -70,11 +70,11 @@ export default function WorkPage() {
 
       <section className="page-hero">
         <span className="eyebrow">Work</span>
-        <h1 style={{ maxWidth: "11ch" }}>A wider look at selected projects.</h1>
+        <h1 style={{ maxWidth: "11ch" }}>A wider look at the work behind the role.</h1>
         <p className="lede">
-          This page collects more of the product thinking behind the portfolio:
-          simplifying the problem, shaping the system, and making the final
-          experience feel calm and easy to trust.
+          This page gives a fuller view of how I work at senior level: spotting
+          complexity early, bringing clarity to the system, and making sure the
+          final product feels dependable for the people using it every day.
         </p>
       </section>
 
@@ -97,8 +97,9 @@ export default function WorkPage() {
         <strong>How I like to work</strong>
         <p className="lede">
           I usually start with the parts that create the most confusion, then
-          move toward the system and polish. That helps the team make faster
-          decisions and keeps the product story consistent.
+          move toward the system and polish. At senior level, that means helping
+          teams make sharper trade-offs, keeping momentum high, and leaving the
+          product in a stronger place than where it started.
         </p>
       </section>
     </main>
