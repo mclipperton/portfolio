@@ -72,8 +72,7 @@ export default function Home() {
 
         <p className="home-hero-lede">
           Product Designer based in the North East of England. For over 6
-          years I&apos;ve designed digital products that help businesses grow
-          and make a meaningful impact.
+          years I&apos;ve designed digital products that help businesses grow.
         </p>
       </section>
 
