@@ -28,14 +28,15 @@ export default function Home() {
   return (
     <main className="portfolio-shell">
       <header className="topbar">
-        <a className="brand-mark" href="#top">
+        <Link className="brand-mark" href="/">
           <span className="brand-dot" aria-hidden="true" />
           Mark Clipperton
-        </a>
+        </Link>
 
         <nav className="topnav" aria-label="Primary">
-          <Link href="work/">Work</Link>
-          <Link href="approach/">Approach</Link>
+          <Link href="/">Home</Link>
+          <Link href="/work">Work</Link>
+          <Link href="/approach">Approach</Link>
           <a href="mailto:mark.clipperton@outlook.com">Contact</a>
         </nav>
       </header>

@@ -55,14 +55,15 @@ export default function WorkPage() {
   return (
     <main className="portfolio-shell">
       <header className="topbar">
-        <Link className="brand-mark" href="../">
+        <Link className="brand-mark" href="/">
           <span className="brand-dot" aria-hidden="true" />
           Mark Clipperton
         </Link>
 
         <nav className="topnav" aria-label="Primary">
-          <Link href="../">Home</Link>
-          <Link href="../approach/">Approach</Link>
+          <Link href="/">Home</Link>
+          <Link href="/work">Work</Link>
+          <Link href="/approach">Approach</Link>
           <a href="mailto:mark.clipperton@outlook.com">Contact</a>
         </nav>
       </header>
