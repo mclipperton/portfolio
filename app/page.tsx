@@ -97,10 +97,9 @@ export default function Home() {
           <div className="hero-orb hero-orb-bottom" aria-hidden="true" />
 
           <figure className="portrait-card">
-            <img
-              src="/mark-clipperton.jpg"
-              alt="Mark Clipperton smiling in formalwear outdoors"
-            />
+            <div className="portrait-fallback" aria-hidden="true">
+              <span>MC</span>
+            </div>
             <figcaption>
               <strong>Mark Clipperton</strong>
               <span>Product designer based in the UK</span>

@@ -1,47 +1,47 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://markclipperton.github.io";
+const sitePath = process.env.NEXT_PUBLIC_SITE_PATH ?? "";
+const normalizedSiteUrl = siteUrl.endsWith("/") ? siteUrl : `${siteUrl}/`;
+const assetPath = (path: string) => `${sitePath}${path}`;
+const toAbsoluteUrl = (path: string) =>
+  new URL(path.replace(/^\//, ""), normalizedSiteUrl).toString();
+const ogImageUrl = toAbsoluteUrl(assetPath("/og.svg"));
+const iconUrl = toAbsoluteUrl(assetPath("/favicon.svg"));
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export async function generateMetadata(): Promise<Metadata> {
-  const host = (await headers()).get("host") ?? "localhost:3000";
-  const baseUrl = new URL(`https://${host}`);
-
-  return {
-    metadataBase: baseUrl,
+export const metadata: Metadata = {
+  metadataBase: new URL(normalizedSiteUrl),
+  title: "Mark Clipperton | Product Designer",
+  description:
+    "A portfolio website for product designer Mark Clipperton, featuring selected work, design principles, and contact details.",
+  icons: {
+    icon: iconUrl,
+    shortcut: iconUrl,
+  },
+  openGraph: {
     title: "Mark Clipperton | Product Designer",
-    description:
-      "A portfolio website for product designer Mark Clipperton, featuring selected work, design principles, and contact details.",
-    icons: {
-      icon: "/favicon.svg",
-      shortcut: "/favicon.svg",
-    },
-    openGraph: {
-      title: "Mark Clipperton | Product Designer",
-      description: "Selected product design work, process notes, and contact details.",
-      url: "/",
-      siteName: "Mark Clipperton",
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: "Mark Clipperton portfolio preview" }],
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: "Mark Clipperton | Product Designer",
-      description: "Selected product design work, process notes, and contact details.",
-      images: ["/og.png"],
-    },
-  };
-}
+    description: "Selected product design work, process notes, and contact details.",
+    url: normalizedSiteUrl,
+    siteName: "Mark Clipperton",
+    images: [
+      {
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        alt: "Mark Clipperton portfolio preview",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mark Clipperton | Product Designer",
+    description: "Selected product design work, process notes, and contact details.",
+    images: [ogImageUrl],
+  },
+};
 
 export default function RootLayout({
   children,
@@ -50,11 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -1,8 +1,6 @@
-# vinext-starter
+# Mark Clipperton Portfolio
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+A product designer portfolio site for Mark Clipperton.
 
 ## Prerequisites
 
@@ -11,23 +9,34 @@ Drizzle support.
 ## Quick Start
 
 ```bash
-npm install
-npm run dev
-npm run build
+pnpm install
+pnpm run dev
+pnpm run build
 ```
 
-This starter does not use `wrangler.jsonc`.
+The production build is configured for static export so it can be deployed on
+GitHub Pages.
+
+## GitHub Pages Setup
+
+1. Create a public GitHub repository for this site.
+2. Push the code to the `main` branch.
+3. In GitHub, open **Settings > Pages** and set the source to **GitHub Actions**.
+4. Wait for the workflow named **Deploy to GitHub Pages** to finish.
+5. Use the published URL shown in the workflow or the Pages settings page.
+
+If you are creating a user site such as `yourname.github.io`, keep the workflow
+as-is. If you are creating a project site, the workflow already adds the repo
+name as the base path automatically.
 
 ## Included Shape
 
 - edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
+- `next.config.ts` is configured for static export
+- `.github/workflows/github-pages.yml` deploys the site with GitHub Actions
+- `public/` contains the favicon and social card used by the homepage
 
-## Workspace Auth Headers
+## Optional Workspace Auth Headers
 
 OpenAI workspace sites can read the current user's email from
 `oai-authenticated-user-email`.
@@ -87,12 +96,7 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 
 ## Useful Commands
 
-- `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
-
-## Learn More
-
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+- `pnpm run dev`: start local development
+- `pnpm run build`: verify the static export build output
+- `pnpm test`: build the site and run the rendered HTML test
+- `pnpm run db:generate`: generate Drizzle migrations after schema changes
